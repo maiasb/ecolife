@@ -1,45 +1,29 @@
 import { useState } from 'react'
 import {Button, Input, InputLabel} from '@mui/material'
 import '../../src/styles/consultaCep.css'
+import { api } from '../services/api';
 
 export function ConsultaCep() {
-  const [cep, setCep] = useState('')
-  const [cepResponse, setCepResponse] = useState({});
+  const [fetchResponse, setFetchResponse] = useState('');
 
   function consultarCep() {
-    if(cep.length !== 8) {
-      return;
-    }
-
-    const options = {method: 'GET'};
-
-    fetch(`http://viacep.com.br/ws/${cep}/json/`, options)
-      .then(response => response.json())
-      .then(response => setCepResponse(response))
+    api.get(`/api/messages/`)
+      .then(response => console.log(response.data))
+      .then(response => setFetchResponse(response))
       .catch(err => console.error(err));
   }
 
+  console.log(fetchResponse)
+
   return (
     <div className="App">
-      <h1>Consulta Cep</h1>
+      <h1>Teste</h1>
       <div className="card">
-        <Input placeholder='Digite o cep' onChange={(e) => {setCep(e.target.value)}}></Input>
+        <Input placeholder='Digite o teste' />
         <Button variant='contained' onClick={consultarCep}>Consultar</Button>
       </div>
       <div className='response'>
-        {cepResponse.cep && (
-          <>
-          <InputLabel>{'Bairro: ' + cepResponse.bairro}</InputLabel>
-          <InputLabel>{'Complemento: ' + cepResponse.complemento}</InputLabel>
-          <InputLabel>{'DDD: ' + cepResponse.ddd}</InputLabel>
-          <InputLabel>{'Gia: ' + cepResponse.gia}</InputLabel>
-          <InputLabel>{'IBGE: ' + cepResponse.ibge}</InputLabel>
-          <InputLabel>{'Localidade: ' + cepResponse.localidade}</InputLabel>
-          <InputLabel>{'Logradouro: ' + cepResponse.logradouro}</InputLabel>
-          <InputLabel>{'Siafi: ' + cepResponse.siafi}</InputLabel>
-          <InputLabel>{'UF: ' + cepResponse.uf}</InputLabel>
-          </>
-        )}
+
       </div>
     </div>
   )
