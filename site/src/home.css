@@ -1,0 +1,9 @@
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+.boxHome {
+  display: flex;
+  gap: 30px;
+}
