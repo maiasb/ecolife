@@ -1,11 +1,5 @@
-
-import { useState } from 'react'
-import { ConsultaCep } from './pages/ConsultaCep'
-import './home.css'
+import MyRoutes from './routes'
 
 export function App() {
-
-  return (
-    <ConsultaCep/>
-  )
+  return <MyRoutes />
 }
