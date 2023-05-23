@@ -7,13 +7,13 @@ use Symfony\Component\HttpFoundation\Response;
 
 class BairroController extends Controller
 {
-    private BairroService $messageService;
-    public function __construct(BairroService $messageService) {
-        $this->messageService = $messageService;
+    private BairroService $bairroService;
+    public function __construct(BairroService $bairroService) {
+        $this->bairroService = $bairroService;
     }
     public function index()
     {
-        $data = $this->messageService->findBairros();
+        $data = $this->bairroService->findBairros();
 
         return response()->json($data, Response::HTTP_OK);
     }

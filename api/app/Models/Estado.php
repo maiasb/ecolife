@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Estado extends Model
 {
-    use HasFactory;
+    protected $table = 'estado';
+
+    protected $fillable = [
+        'id',
+        'codigo_uf',
+        'nome',
+        'uf',
+        'regiao',
+    ];
 }
