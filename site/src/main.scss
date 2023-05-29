@@ -1,0 +1,44 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  -webkit-overflow-scrolling: touch;
+  height: 100vh;
+  overflow: auto;
+}
+
+*:focus {
+  outline: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased !important;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+body,
+input,
+button {
+  color: #222;
+  font-size: 12px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+a,
+span {
+  text-decoration: none;
+  text-transform: none;
+  justify-content: flex-start;
+}
+#root {
+  height: 100%;
+}
