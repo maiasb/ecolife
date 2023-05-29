@@ -19,3 +19,4 @@ Route::get('/', function () {
 
 require __DIR__ . '/bairros.php';
 require __DIR__ . '/estados.php';
+require __DIR__ . '/categorias.php';

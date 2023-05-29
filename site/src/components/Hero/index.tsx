@@ -1,10 +1,11 @@
 import useBreakpoint from "../../hooks/useBreakpoint";
-import { Actions, DivLogoTopBar, Container, Navigation, TopBar, HeroContent, HeroContentSection, HeroContentDescription } from "./styles";
+import { Actions, DivLogoTopBar, Container, Navigation, TopBar, HeroContent, HeroImage, HeroDescription, HeroContentDescription } from "./styles";
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { Button, IconButton, Link, Typography } from "@mui/material";
-import ecoLifelogoHero from '../../assets/icons/big/ecoLifeHeroLogo.svg'
+import {  Button, IconButton, Link, Typography } from "@mui/material";
+import ecoLifelogoHeroDesktop from '../../assets/icons/big/ecoLifeHeroLogoDesktop.svg'
+import ecoLifelogoHeroMobile from '../../assets/icons/small/ecolifeHeroLogoMobile.svg'
 
 export function Hero() {
   const {isOnBreakpoint: isTableOrLess} = useBreakpoint(1023);
@@ -36,14 +37,21 @@ export function Hero() {
         </Actions>
       </TopBar>
       <HeroContent>
-        <HeroContentDescription>
-          <Typography>Ofertas exclusivas de coleção de móveis</Typography>
-          <Typography>Explorar diferentes categorias. Encontre as melhores ofertas.</Typography>
-          <Button variant="contained">Comprar Agora</Button>
-        </HeroContentDescription>
-        <HeroContentSection>
-          <img src={ecoLifelogoHero}/>
-        </HeroContentSection>
+        <HeroDescription>
+          <HeroContentDescription>
+            <Typography>Ofertas exclusivas de coleção de móveis</Typography>
+            {
+              isTableOrLess && (<img src={ecoLifelogoHeroMobile}/>)
+            }
+            <Typography>Explorar diferentes categorias. Encontre as melhores ofertas.</Typography>
+            <Button variant="contained">Comprar Agora</Button>
+          </HeroContentDescription>
+        </HeroDescription>
+       {
+        !isTableOrLess && ( <HeroImage>
+          <img src={ecoLifelogoHeroDesktop}/>
+        </HeroImage>)
+       }
       </HeroContent>
     </Container>
   )
