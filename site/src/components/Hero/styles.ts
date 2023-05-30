@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   height: 700px;
   padding: 30px 150px;
-  background: #FFF4E7;
+  background: #fff4e7;
   gap: 50px;
 
   @media (max-width: 1023px) {
@@ -75,4 +75,3 @@ export const HeroImage = styled.div`
   height: 100%;
   width: 100%;
 `
-
