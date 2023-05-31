@@ -22,23 +22,22 @@ export function Hero() {
   const { isOnBreakpoint: isTableOrLess } = useBreakpoint(1023)
   const classes = useStyles()
   return (
-    <Container>
+    <Container id="home">
       <div className={classes.topBar}>
         {isTableOrLess && (
           <IconButton sx={{ marginLeft: '20px' }}>
             <MenuIcon />
           </IconButton>
         )}
-        <DivLogoTopBar>Imagem</DivLogoTopBar>
+        <IconButton href="#home">
+          <DivLogoTopBar>Imagem</DivLogoTopBar>
+        </IconButton>
         {!isTableOrLess && (
           <Navigation>
-            <Link href="#" underline="hover">
-              Home
-            </Link>
-            <Link href="#" underline="hover">
+            <Link href="#products" underline="hover">
               Produtos
             </Link>
-            <Link href="#" underline="hover">
+            <Link href="#categories" underline="hover">
               Categorias
             </Link>
             <Link href="#" underline="hover">

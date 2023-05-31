@@ -42,7 +42,7 @@ export function Categories() {
   const dataChunks = data ? chunk(data, columnLimit) : []
 
   return (
-    <Container>
+    <Container id="categories">
       <Typography>Explorar por categoria</Typography>
       <CategoriesContent>
         <Search>
