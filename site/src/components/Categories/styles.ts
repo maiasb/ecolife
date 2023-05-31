@@ -17,6 +17,11 @@ export const CategoriesContent = styled.div`
   justify-content: center;
   align-items: start;
   width: 100%;
+
+  @media (max-width: 1023px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 export const Search = styled.div`
   display: flex;
@@ -30,9 +35,19 @@ export const CardsCategories = styled.div`
   justify-content: space-between;
   margin-left: 15px;
   overflow: auto;
+
+  @media (max-width: 1023px) {
+    width: 100%;
+    margin-top: 15px;
+  }
 `
 export const RowCardCategory = styled.div`
   display: flex;
+
+  @media (max-width: 1023px) {
+    width: 100%;
+    flex-direction: column;
+  }
 `
 export const CardCategory = styled.div`
   display: flex;
@@ -43,4 +58,9 @@ export const CardCategory = styled.div`
   margin: 15px;
   background-color: red;
   border-radius: 8px;
+
+  @media (max-width: 1023px) {
+    width: 100%;
+    margin: 15px;
+  }
 `

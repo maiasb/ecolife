@@ -1,4 +1,5 @@
 import {
+  Button,
   FormControl,
   InputAdornment,
   List,
@@ -19,9 +20,11 @@ import {
 import { CategoriesFetch } from '../../fetches/categories'
 import SearchIcon from '@mui/icons-material/Search'
 import { Category } from '../../models/category'
+import useBreakpoint from '../../hooks/useBreakpoint'
 
 export function Categories() {
   const { data } = CategoriesFetch()
+  const { isOnBreakpoint: isTableOrLess } = useBreakpoint(1023)
 
   const chunk = (arr: any[], size: number) =>
     arr.reduce((chunks: any[], el: any, i: number) => {
@@ -56,19 +59,26 @@ export function Categories() {
               }}
             />
           </FormControl>
-          <Paper style={{ maxHeight: '400px', overflow: 'auto' }}>
-            <List>
-              {data &&
-                data.map((category) => (
-                  <ListItem key={category.id}>
-                    <ListItemButton>{category.nome}</ListItemButton>
-                  </ListItem>
-                ))}
-            </List>
-          </Paper>
+          {!isTableOrLess && (
+            <Paper style={{ maxHeight: '400px', overflow: 'auto' }}>
+              <List>
+                {data &&
+                  data.map((category) => (
+                    <ListItem key={category.id}>
+                      <ListItemButton>{category.nome}</ListItemButton>
+                    </ListItem>
+                  ))}
+              </List>
+            </Paper>
+          )}
+          {!isTableOrLess && (
+            <Button sx={{ color: '#FFFFFF', marginTop: '25px' }}>
+              Todas as categorias
+            </Button>
+          )}
         </Search>
         <CardsCategories>
-          <Paper style={{ maxHeight: '400px', overflow: 'auto' }}>
+          <Paper style={{ maxHeight: '500px', overflow: 'auto' }}>
             {dataChunks.map((group: Category[], columnIndex: number) => (
               <RowCardCategory key={columnIndex}>
                 {group.map((category: Category) => (

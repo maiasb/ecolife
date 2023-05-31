@@ -4,11 +4,11 @@ import {
   DivLogoTopBar,
   Container,
   Navigation,
-  TopBar,
   HeroContent,
   HeroImage,
   HeroDescription,
   HeroContentDescription,
+  useStyles,
 } from './styles'
 import SearchIcon from '@mui/icons-material/Search'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
@@ -16,13 +16,19 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import { Button, IconButton, Link, Typography } from '@mui/material'
 import ecoLifelogoHeroDesktop from '../../assets/icons/big/ecoLifeHeroLogoDesktop.svg'
 import ecoLifelogoHeroMobile from '../../assets/icons/small/ecolifeHeroLogoMobile.svg'
+import MenuIcon from '@mui/icons-material/Menu'
 
 export function Hero() {
   const { isOnBreakpoint: isTableOrLess } = useBreakpoint(1023)
+  const classes = useStyles()
   return (
     <Container>
-      <TopBar>
-        {isTableOrLess && <h1>Menu</h1>}
+      <div className={classes.topBar}>
+        {isTableOrLess && (
+          <IconButton sx={{ marginLeft: '20px' }}>
+            <MenuIcon />
+          </IconButton>
+        )}
         <DivLogoTopBar>Imagem</DivLogoTopBar>
         {!isTableOrLess && (
           <Navigation>
@@ -51,7 +57,7 @@ export function Hero() {
             <AccountCircleIcon />
           </IconButton>
         </Actions>
-      </TopBar>
+      </div>
       <HeroContent>
         <HeroDescription>
           <HeroContentDescription>

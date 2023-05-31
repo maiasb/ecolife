@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { makeStyles } from '@mui/styles'
 
 export const Container = styled.div`
   display: flex;
@@ -12,15 +13,8 @@ export const Container = styled.div`
     padding: 10px 15px;
   }
 `
-
-export const TopBar = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-`
 export const DivLogoTopBar = styled.div`
+  margin-left: 20px;
   display: flex;
   justify-content: space-between;
 `
@@ -33,6 +27,7 @@ export const Actions = styled.div`
   display: flex;
   justify-content: center;
   gap: 20px;
+  margin-right: 20px;
 
   @media (max-width: 1023px) {
     gap: 5px;
@@ -75,3 +70,19 @@ export const HeroImage = styled.div`
   height: 100%;
   width: 100%;
 `
+
+export const useStyles = makeStyles(() => ({
+  topBar: {
+    zIndex: '10',
+    display: 'flex',
+    position: 'fixed',
+    left: 0,
+    top: 0,
+    width: '100%',
+    height: '60px',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    textAlign: 'center',
+    backgroundColor: '#594433',
+  },
+}))
