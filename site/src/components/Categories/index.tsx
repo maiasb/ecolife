@@ -19,7 +19,7 @@ import {
 } from './styles'
 import { CategoriesFetch } from '../../fetches/categories'
 import SearchIcon from '@mui/icons-material/Search'
-import { Category } from '../../models/category'
+import { Category } from '../../models/Category'
 import useBreakpoint from '../../hooks/useBreakpoint'
 
 export function Categories() {

@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 import api from '../services/api'
-import { Category } from '../models/category'
+import { Category } from '../models/Category'
 
 export const CategoriesFetch = () => {
   const { data } = useSWR<Category[]>(

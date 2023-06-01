@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 require __DIR__ . '/categorias.php';
+require __DIR__ . '/produtos.php';
