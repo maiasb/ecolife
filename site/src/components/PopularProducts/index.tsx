@@ -5,23 +5,23 @@ import Carousel from 'react-elastic-carousel'
 import useBreakpoint from '../../hooks/useBreakpoint'
 import { CardPopularProduct } from './components/CardPopularProduct'
 
+const breakPoints = [
+  { width: 0, itemsToShow: 1.03 },
+  { width: 360, itemsToShow: 1.15 },
+  { width: 460, itemsToShow: 1.2 },
+  { width: 600, itemsToShow: 1.9 },
+  { width: 900, itemsToShow: 2.1 },
+  { width: 1024, itemsToShow: 2.4 },
+  { width: 1220, itemsToShow: 2.8 },
+  { width: 1440, itemsToShow: 3 },
+  { width: 1600, itemsToShow: 4 },
+]
+
 export function PopularProducts() {
   const { isOnBreakpoint: isTabletSizeOrSmaller } = useBreakpoint(390)
 
-  const breakPoints = [
-    { width: 0, itemsToShow: 1.03 },
-    { width: 360, itemsToShow: 1.15 },
-    { width: 460, itemsToShow: 1.2 },
-    { width: 600, itemsToShow: 1.9 },
-    { width: 900, itemsToShow: 2.1 },
-    { width: 1024, itemsToShow: 2.4 },
-    { width: 1220, itemsToShow: 2.8 },
-    { width: 1440, itemsToShow: 3 },
-    { width: 1600, itemsToShow: 4 },
-  ]
-
   const { data } = ProductsFetch()
-  console.log(data)
+
   return (
     <Container>
       <Typography>Produtos Populares</Typography>
