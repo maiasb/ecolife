@@ -1,20 +1,45 @@
-import { Box, Card, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 import { ProductsFetch } from '../../fetches/products'
-import { Container, PopularProductsContent } from './styles'
+import { Container, Item, PopularProductsContent } from './styles'
+import Carousel from 'react-elastic-carousel'
+import useBreakpoint from '../../hooks/useBreakpoint'
+import { CardPopularProduct } from './components/CardPopularProduct'
 
 export function PopularProducts() {
+  const { isOnBreakpoint: isTabletSizeOrSmaller } = useBreakpoint(390)
+
+  const breakPoints = [
+    { width: 0, itemsToShow: 1.03 },
+    { width: 360, itemsToShow: 1.15 },
+    { width: 460, itemsToShow: 1.2 },
+    { width: 600, itemsToShow: 1.9 },
+    { width: 900, itemsToShow: 2.1 },
+    { width: 1024, itemsToShow: 2.4 },
+    { width: 1220, itemsToShow: 2.8 },
+    { width: 1440, itemsToShow: 3 },
+    { width: 1600, itemsToShow: 4 },
+  ]
+
   const { data } = ProductsFetch()
   return (
     <Container>
       <Typography>Produtos Populares</Typography>
       <PopularProductsContent>
-        {data &&
-          data.map((product) => (
-            <Card key={product.id}>
-              <Box>{product.nome}</Box>
-              <Box>{product.preco}</Box>
-            </Card>
-          ))}
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
+        /* @ts-ignore */}
+        <Carousel
+          breakPoints={breakPoints}
+          pagination={false}
+          itemPadding={[0, 30]}
+          outerSpacing={isTabletSizeOrSmaller ? 30 : 40}
+        >
+          {data &&
+            data.map((product) => (
+              <Item key={product.id}>
+                <CardPopularProduct name={product.nome} price={product.preco} />
+              </Item>
+            ))}
+        </Carousel>
       </PopularProductsContent>
     </Container>
   )
