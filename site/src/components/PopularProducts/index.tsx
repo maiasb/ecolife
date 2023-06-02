@@ -21,25 +21,33 @@ export function PopularProducts() {
   ]
 
   const { data } = ProductsFetch()
+  console.log(data)
   return (
     <Container>
       <Typography>Produtos Populares</Typography>
       <PopularProductsContent>
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
-        /* @ts-ignore */}
-        <Carousel
-          breakPoints={breakPoints}
-          pagination={false}
-          itemPadding={[0, 30]}
-          outerSpacing={isTabletSizeOrSmaller ? 30 : 40}
-        >
-          {data &&
-            data.map((product) => (
+        {data?.length ? (
+          /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
+          /* @ts-ignore */
+          <Carousel
+            breakPoints={breakPoints}
+            pagination={false}
+            itemPadding={[0, 30]}
+            outerSpacing={isTabletSizeOrSmaller ? 30 : 40}
+          >
+            {data.map((product) => (
               <Item key={product.id}>
-                <CardPopularProduct name={product.nome} price={product.preco} />
+                <CardPopularProduct
+                  name={product.nome}
+                  price={product.preco}
+                  description={product.descricao}
+                />
               </Item>
             ))}
-        </Carousel>
+          </Carousel>
+        ) : (
+          <h1>Sem produtos cadastrados</h1>
+        )}
       </PopularProductsContent>
     </Container>
   )

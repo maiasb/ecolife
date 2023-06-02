@@ -31,8 +31,7 @@ export const Item = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 500px;
+  height: 400px;
   width: 300px;
   background-color: #fff4e7;
-  color: #fff;
 `
