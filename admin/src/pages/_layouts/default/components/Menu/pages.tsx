@@ -1,5 +1,6 @@
 import { TbAlignLeft } from 'react-icons/tb'
 import { Categories } from '../../../../Categories'
+import { Products } from '../../../../Products'
 
 const pages = [
   {
@@ -12,6 +13,20 @@ const pages = [
         title: 'Categorias Criadas',
         href: '/categorias',
         component: Categories,
+        showMenu: true,
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: 'Produtos',
+    icon: <TbAlignLeft />,
+    subModules: [
+      {
+        moduleID: 2,
+        title: 'Produtos Criados',
+        href: '/produtos',
+        component: Products,
         showMenu: true,
       },
     ],
