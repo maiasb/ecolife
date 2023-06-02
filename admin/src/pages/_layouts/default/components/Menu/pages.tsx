@@ -1,6 +1,8 @@
 import { TbAlignLeft } from 'react-icons/tb'
-import { Categories } from '../../../../Categories'
-import { Products } from '../../../../Products'
+import { Categories } from '../../../../Categories/CategoriesList'
+import { Products } from '../../../../Products/ProductsList'
+import { CreateCategory } from '../../../../Categories/CreateCategory'
+import { CreateProduct } from '../../../../Products/CreateProduct'
 
 const pages = [
   {
@@ -15,6 +17,13 @@ const pages = [
         component: Categories,
         showMenu: true,
       },
+      {
+        moduleID: 1,
+        title: 'Criar Categorias',
+        href: '/criar-categorias',
+        component: CreateCategory,
+        showMenu: true,
+      },
     ],
   },
   {
@@ -27,6 +36,13 @@ const pages = [
         title: 'Produtos Criados',
         href: '/produtos',
         component: Products,
+        showMenu: true,
+      },
+      {
+        moduleID: 2,
+        title: 'Cadastrar Produtos',
+        href: '/cadastrar-produtos',
+        component: CreateProduct,
         showMenu: true,
       },
     ],

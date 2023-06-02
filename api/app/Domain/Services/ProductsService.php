@@ -12,7 +12,13 @@ class ProductsService extends BaseService
         $this->productsRepository = $productsRepository;
     }
 
-    public function findProducts() {
+    public function findProducts()
+    {
         return $this->productsRepository->query()->get();
+    }
+
+    public function create(array $filters)
+    {
+        return $this->productsRepository->create($filters);
     }
 }

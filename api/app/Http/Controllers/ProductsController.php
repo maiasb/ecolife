@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Domain\Services\ProductsService;
+use App\Http\Requests\ProductsRequest;
+use Symfony\Component\HttpFoundation\Response;
 
 class ProductsController extends Controller
 {
@@ -13,6 +15,14 @@ class ProductsController extends Controller
     }
 
     public function index() {
-        return $this->productsService->findProducts();
+        $this->response = $this->productsService->findProducts();
+
+        return response()->json($this->response, Response::HTTP_OK);
+    }
+
+    public function store(ProductsRequest $request) {
+        $this->response = $this->productsService->create($request->all());
+
+        return response()->json($this->response, Response::HTTP_OK);
     }
 }

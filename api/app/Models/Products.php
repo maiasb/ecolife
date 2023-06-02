@@ -22,4 +22,13 @@ class Products extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function rules(): array
+    {
+        return [
+            'nome'    => 'required',
+            'preco' => 'required',
+            'categoria_id' => 'required',
+        ];
+    }
 }
