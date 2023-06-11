@@ -5,8 +5,6 @@ import { Card, CardContent, Content, Item } from './styles'
 export function Products() {
   const { data } = ProductsFetch()
 
-  console.log(data)
-
   return (
     <Content>
       <CardHeader
@@ -20,6 +18,7 @@ export function Products() {
           {data &&
             data.map((product) => (
               <Item key={product.id}>
+                <Typography sx={{ width: '100px' }}>{product.id}</Typography>
                 <Typography sx={{ width: '100%' }}>{product.nome}</Typography>
                 <Typography sx={{ width: '100%' }}>{product.preco}</Typography>
                 <Typography sx={{ width: '100%' }}>
