@@ -6,7 +6,7 @@ export const CategoriesFetch = () => {
   const { data } = useSWR<Category[]>(
     'categories',
     async (): Promise<Category[]> => {
-      const response = await api.get(`/api/produtos/categorias`)
+      const response = await api.get(`/api/categorias`)
       const categories = response.data as Category[]
 
       return categories
