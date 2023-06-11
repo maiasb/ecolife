@@ -3,4 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsCategoriesController;
 
-Route::get('/produtos/categorias', [ProductsCategoriesController::class, 'index']);
+Route::controller(ProductsCategoriesController::class)->group(function () {
+    Route::get('/produtos/categorias', 'index');
+});

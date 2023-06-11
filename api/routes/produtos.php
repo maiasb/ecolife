@@ -3,5 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 
-Route::get('/produtos/', [ProductsController::class, 'index']);
-Route::post('/produto/', [ProductsController::class, 'store']);
+Route::controller(ProductsController::class)->group(function () {
+    Route::get('/produtos', 'index');
+    Route::post('/produto', 'store');
+});

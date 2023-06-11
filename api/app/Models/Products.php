@@ -16,13 +16,10 @@ class Products extends Model
 {
     protected $table = 'produtos';
     protected $fillable = [
-        'id',
         'nome',
         'preco',
         'descricao',
         'categoria_id',
-        'created_at',
-        'updated_at',
     ];
 
     public function rules(): array

@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Default } from '../pages/_layouts/default'
 import pages from '../pages/_layouts/default/components/Menu/pages'
 import { useEffect, useState } from 'react'
+import { Toaster } from 'react-hot-toast'
 
 interface RoutesItems {
   moduleID: number
@@ -35,6 +36,7 @@ export function MyRoutes() {
           })}
         </Route>
       </Routes>
+      <Toaster />
     </BrowserRouter>
   )
 }

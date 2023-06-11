@@ -4,12 +4,13 @@ namespace App\Http\Requests;
 
 class ProductsRequest extends BaseRequests
 {
-    public function onStore()
-    {
-        return [
-            'nome'    => 'required',
-            'preco' => 'required',
-            'categoria_id' => 'required',
-        ];
-    }
+//    public function onStore()
+//    {
+//        return [
+//            'name' => 'required',
+//            'description' => 'required',
+//            'price' => 'required',
+//            'idCategory' => 'required',
+//        ];
+//    }
 }
