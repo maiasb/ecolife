@@ -9,13 +9,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property string created_at
  * @property string updated_at
  */
-class ProductCategory extends Model
+class Category extends Model
 {
     protected $table = 'produtos_categorias';
     protected $fillable = [
-        'id',
         'nome',
-        'created_at',
-        'updated_at',
     ];
 }

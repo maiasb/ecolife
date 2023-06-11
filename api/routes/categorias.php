@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductsCategoriesController;
+use App\Http\Controllers\CategoriesController;
 
-Route::controller(ProductsCategoriesController::class)->group(function () {
-    Route::get('/produtos/categorias', 'index');
+Route::controller(CategoriesController::class)->group(function () {
+    Route::get('/categorias/', 'index');
+    Route::post('/categoria/', 'store');
 });

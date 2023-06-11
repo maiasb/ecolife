@@ -32,7 +32,8 @@ export function CreateProduct() {
     api
       .post('/api/produto', body)
       .then(() => {
-        console.log('Produto cadastrado!')
+        handleClear()
+        toast.success('Produto cadastrado!')
       })
       .catch((error) => {
         toast.error(error.message)
