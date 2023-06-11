@@ -1,5 +1,5 @@
 import { CardHeader, Typography } from '@mui/material'
-import { Card, CardContent, Content, Item } from './styles'
+import { Card, CardContent, Content, Item, ListHeader } from './styles'
 import { CategoriesFetch } from '../../../fetches/categories'
 
 export function Categories() {
@@ -14,6 +14,19 @@ export function Categories() {
       />
 
       <CardContent>
+        <ListHeader>
+          <Item>
+            <Typography sx={{ width: '100px' }} color="gray">
+              ID
+            </Typography>
+            <Typography sx={{ width: '100%' }} color="gray">
+              Nome
+            </Typography>
+            <Typography sx={{ width: '100%' }} color="gray">
+              Data de Criação
+            </Typography>
+          </Item>
+        </ListHeader>
         <Card>
           {data &&
             data.map((product) => (
