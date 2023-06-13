@@ -10,7 +10,7 @@ export const theme = createTheme({
           // Some CSS
           fontSize: '1rem',
           fontWeight: 700,
-          color: '#ffffff',
+          color: '#594433',
         },
       },
     },

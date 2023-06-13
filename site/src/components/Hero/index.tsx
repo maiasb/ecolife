@@ -16,6 +16,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import { Button, IconButton, Link, Typography } from '@mui/material'
 import ecoLifelogoHeroDesktop from '../../assets/icons/big/ecoLifeHeroLogoDesktop.svg'
 import ecoLifelogoHeroMobile from '../../assets/icons/small/ecolifeHeroLogoMobile.svg'
+import ecolifeLogo from '../../assets/icons/small/ecolifeLogo.svg'
 import MenuIcon from '@mui/icons-material/Menu'
 
 export function Hero() {
@@ -30,7 +31,7 @@ export function Hero() {
           </IconButton>
         )}
         <IconButton href="#home">
-          <DivLogoTopBar>Imagem</DivLogoTopBar>
+          <DivLogoTopBar> <img src={ecolifeLogo} alt="ecolife" /> </DivLogoTopBar>
         </IconButton>
         {!isTableOrLess && (
           <Navigation>
@@ -39,6 +40,9 @@ export function Hero() {
             </Link>
             <Link href="#categories" underline="hover">
               Categorias
+            </Link>
+            <Link href="#" underline="hover">
+              Sobre
             </Link>
             <Link href="#" underline="hover">
               Contate-nos
