@@ -19,6 +19,11 @@ class ProductsService extends BaseService
 
     public function create(array $filters)
     {
-        return $this->productsRepository->create($filters);
+        return $this->productsRepository->create([
+            'nome' => $filters['name'],
+            'descricao' => $filters['description'],
+            'preco' => $filters['price'],
+            'categoria_id' => $filters['idCategory'],
+        ]);
     }
 }

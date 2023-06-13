@@ -14,7 +14,7 @@ export const Container = styled.div`
   }
 `
 export const DivLogoTopBar = styled.div`
-  margin-left: 20px;
+  height: 36px;
   display: flex;
   justify-content: space-between;
 `
@@ -22,6 +22,7 @@ export const Navigation = styled.div`
   display: flex;
   justify-content: center;
   gap: 50px;
+  color: hsl(27, 27%, 27%);
 `
 export const Actions = styled.div`
   display: flex;
@@ -79,10 +80,11 @@ export const useStyles = makeStyles(() => ({
     left: 0,
     top: 0,
     width: '100%',
-    height: '60px',
     justifyContent: 'space-between',
     alignItems: 'center',
     textAlign: 'center',
-    backgroundColor: '#594433',
+    backgroundColor: '#A68C69',
+    paddingBlock: '16px',
+    paddingInline: '75px',
   },
 }))
