@@ -1,13 +1,13 @@
 import useBreakpoint from '../../hooks/useBreakpoint'
 import {
   Actions,
-  DivLogoTopBar,
   Container,
-  Navigation,
+  DivLogoTopBar,
   HeroContent,
-  HeroImage,
-  HeroDescription,
   HeroContentDescription,
+  HeroDescription,
+  HeroImage,
+  Navigation,
   useStyles,
 } from './styles'
 import SearchIcon from '@mui/icons-material/Search'
@@ -31,7 +31,10 @@ export function Hero() {
           </IconButton>
         )}
         <IconButton href="#home">
-          <DivLogoTopBar> <img src={ecolifeLogo} alt="ecolife" /> </DivLogoTopBar>
+          <DivLogoTopBar>
+            {' '}
+            <img src={ecolifeLogo} alt="ecolife" />{' '}
+          </DivLogoTopBar>
         </IconButton>
         {!isTableOrLess && (
           <Navigation>
@@ -44,7 +47,7 @@ export function Hero() {
             <Link href="#" underline="hover">
               Sobre
             </Link>
-            <Link href="#" underline="hover">
+            <Link href="#footer" underline="hover">
               Contate-nos
             </Link>
           </Navigation>

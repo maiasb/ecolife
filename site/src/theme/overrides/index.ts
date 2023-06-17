@@ -10,7 +10,15 @@ export const theme = createTheme({
           // Some CSS
           fontSize: '1rem',
           fontWeight: 700,
-          color: '#594433',
+          color: '#FFF4E7',
+          // fontFamily: 'Playfair Display',
+        },
+      },
+    },
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          fill: '#FFF4E7',
         },
       },
     },

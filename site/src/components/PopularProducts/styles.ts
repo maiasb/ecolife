@@ -20,6 +20,7 @@ export const PopularProductsContent = styled.div`
   align-items: center;
   height: 700px;
   padding: 150px 150px;
+  color: #9ba657;
 
   @media (max-width: 1023px) {
     margin-top: 100px;
@@ -30,7 +31,7 @@ export const Item = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: left;
   height: 400px;
   width: 300px;
   background-color: #fff4e7;

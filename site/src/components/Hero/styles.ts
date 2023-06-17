@@ -22,7 +22,9 @@ export const Navigation = styled.div`
   display: flex;
   justify-content: center;
   gap: 50px;
-  color: hsl(27, 27%, 27%);
+  color: #fff4e7;
+  stroke: #fff4e7;
+  fill: #fff4e7;
 `
 export const Actions = styled.div`
   display: flex;
