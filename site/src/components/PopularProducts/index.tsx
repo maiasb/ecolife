@@ -23,7 +23,7 @@ export function PopularProducts() {
   const { data } = ProductsFetch()
 
   return (
-    <Container>
+    <Container id="products">
       <Typography>Produtos Populares</Typography>
       <PopularProductsContent>
         {data?.length ? (
