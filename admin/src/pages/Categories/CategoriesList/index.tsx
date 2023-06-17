@@ -29,12 +29,12 @@ export function Categories() {
         </ListHeader>
         <Card>
           {data &&
-            data.map((product) => (
-              <Item key={product.id}>
-                <Typography sx={{ width: '100px' }}>{product.id}</Typography>
-                <Typography sx={{ width: '100%' }}>{product.nome}</Typography>
+            data.map((category) => (
+              <Item key={category.id}>
+                <Typography sx={{ width: '100px' }}>{category.id}</Typography>
+                <Typography sx={{ width: '100%' }}>{category.nome}</Typography>
                 <Typography sx={{ width: '100%' }}>
-                  {product.created_at}
+                  {category.created_at}
                 </Typography>
               </Item>
             ))}

@@ -14,7 +14,9 @@ class ProductsService extends BaseService
 
     public function findProducts()
     {
-        return $this->productsRepository->query()->get();
+        return $this->productsRepository->query()->selectRaw('*, produtos_categorias.nome as nome_categoria')
+            ->join('produtos_categorias', 'produtos.categoria_id', '=', 'produtos_categorias.id')
+            ->get();
     }
 
     public function create(array $filters)

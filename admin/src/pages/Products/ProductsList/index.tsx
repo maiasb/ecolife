@@ -26,6 +26,9 @@ export function Products() {
               Preço
             </Typography>
             <Typography sx={{ width: '100%' }} color="gray">
+              Categoria
+            </Typography>
+            <Typography sx={{ width: '100%' }} color="gray">
               Data de Criação
             </Typography>
           </Item>
@@ -37,6 +40,9 @@ export function Products() {
                 <Typography sx={{ width: '100px' }}>{product.id}</Typography>
                 <Typography sx={{ width: '100%' }}>{product.nome}</Typography>
                 <Typography sx={{ width: '100%' }}>{product.preco}</Typography>
+                <Typography sx={{ width: '100%' }}>
+                  {product.nome_categoria}
+                </Typography>
                 <Typography sx={{ width: '100%' }}>
                   {product.created_at}
                 </Typography>
