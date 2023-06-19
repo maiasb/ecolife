@@ -13,7 +13,7 @@ import { Facebook, Instagram, LinkedIn, Twitter } from '@mui/icons-material'
 
 export function Footer() {
   return (
-    <Container id="#footer">
+    <Container id="footer">
       <ContainerLinks>
         <DivLogoFooter>
           <ImgLogo>

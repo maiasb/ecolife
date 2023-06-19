@@ -1,6 +1,6 @@
-import { CardHeader, Typography } from '@mui/material'
+import { CardHeader, Skeleton, Typography } from '@mui/material'
 import { ProductsFetch } from '../../../fetches/products'
-import { Card, CardContent, Content, Item, ListHeader } from './styles'
+import { CardContent, Content, Item, ListHeader } from './styles'
 
 export function Products() {
   const { data } = ProductsFetch()
@@ -33,8 +33,8 @@ export function Products() {
             </Typography>
           </Item>
         </ListHeader>
-        <Card>
-          {data &&
+        {data ? (
+          (data.length &&
             data.map((product) => (
               <Item key={product.id}>
                 <Typography sx={{ width: '100px' }}>{product.id}</Typography>
@@ -47,8 +47,10 @@ export function Products() {
                   {product.created_at}
                 </Typography>
               </Item>
-            ))}
-        </Card>
+            ))) || <Typography>Nenhum produto cadastrado</Typography>
+        ) : (
+          <Skeleton />
+        )}
       </CardContent>
     </Content>
   )

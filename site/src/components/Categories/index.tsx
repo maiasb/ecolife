@@ -44,51 +44,55 @@ export function Categories() {
   return (
     <Container id="categories">
       <Typography>Explorar por categoria</Typography>
-      <CategoriesContent>
-        <Search>
-          <FormControl variant="standard">
-            <TextField
-              variant="outlined"
-              placeholder="Pesquisar"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <SearchIcon />
-                  </InputAdornment>
-                ),
-              }}
-            />
-          </FormControl>
-          {!isTableOrLess && (
-            <Paper style={{ maxHeight: '400px', overflow: 'auto' }}>
-              <List>
-                {data &&
-                  data.map((category) => (
-                    <ListItem key={category.id}>
-                      <ListItemButton>{category.nome}</ListItemButton>
-                    </ListItem>
+      {(dataChunks.length && (
+        <CategoriesContent>
+          <Search>
+            <FormControl variant="standard">
+              <TextField
+                variant="outlined"
+                placeholder="Pesquisar"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <SearchIcon />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            </FormControl>
+            {!isTableOrLess && (
+              <Paper style={{ maxHeight: '400px', overflow: 'auto' }}>
+                <List>
+                  {data &&
+                    data.map((category) => (
+                      <ListItem key={category.id}>
+                        <ListItemButton>{category.nome}</ListItemButton>
+                      </ListItem>
+                    ))}
+                </List>
+              </Paper>
+            )}
+            {!isTableOrLess && (
+              <Button sx={{ color: '#FFFFFF', marginTop: '25px' }}>
+                Todas as categorias
+              </Button>
+            )}
+          </Search>
+          <CardsCategories>
+            <Paper style={{ maxHeight: '500px', overflow: 'auto' }}>
+              {dataChunks.map((group: Category[], columnIndex: number) => (
+                <RowCardCategory key={columnIndex}>
+                  {group.map((category: Category) => (
+                    <CardCategory key={category.id}>
+                      {category.nome}
+                    </CardCategory>
                   ))}
-              </List>
+                </RowCardCategory>
+              ))}
             </Paper>
-          )}
-          {!isTableOrLess && (
-            <Button sx={{ color: '#FFFFFF', marginTop: '25px' }}>
-              Todas as categorias
-            </Button>
-          )}
-        </Search>
-        <CardsCategories>
-          <Paper style={{ maxHeight: '500px', overflow: 'auto' }}>
-            {dataChunks.map((group: Category[], columnIndex: number) => (
-              <RowCardCategory key={columnIndex}>
-                {group.map((category: Category) => (
-                  <CardCategory key={category.id}>{category.nome}</CardCategory>
-                ))}
-              </RowCardCategory>
-            ))}
-          </Paper>
-        </CardsCategories>
-      </CategoriesContent>
+          </CardsCategories>
+        </CategoriesContent>
+      )) || <Typography>Nenhuma categoria disponpivel</Typography>}
     </Container>
   )
 }

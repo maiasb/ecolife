@@ -1,4 +1,4 @@
-import { CardHeader, Typography } from '@mui/material'
+import { CardHeader, Skeleton, Typography } from '@mui/material'
 import { Card, CardContent, Content, Item, ListHeader } from './styles'
 import { CategoriesFetch } from '../../../fetches/categories'
 
@@ -27,18 +27,29 @@ export function Categories() {
             </Typography>
           </Item>
         </ListHeader>
-        <Card>
-          {data &&
-            data.map((category) => (
-              <Item key={category.id}>
-                <Typography sx={{ width: '100px' }}>{category.id}</Typography>
-                <Typography sx={{ width: '100%' }}>{category.nome}</Typography>
-                <Typography sx={{ width: '100%' }}>
-                  {category.created_at}
-                </Typography>
-              </Item>
-            ))}
-        </Card>
+        {data ? (
+          (data.length && (
+            <Card>
+              {data.map((category) => (
+                <Item key={category.id}>
+                  <Typography sx={{ width: '100px' }}>{category.id}</Typography>
+                  <Typography sx={{ width: '100%' }}>
+                    {category.nome}
+                  </Typography>
+                  <Typography sx={{ width: '100%' }}>
+                    {category.created_at}
+                  </Typography>
+                </Item>
+              ))}
+            </Card>
+          )) || (
+            <Typography sx={{ height: '50px', marginLeft: '15px' }}>
+              Nenhuma categoria cadastrada
+            </Typography>
+          )
+        ) : (
+          <Skeleton />
+        )}
       </CardContent>
     </Content>
   )
