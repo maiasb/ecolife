@@ -66,7 +66,7 @@ export const CardCategory = styled.div`
   width: 280px;
   height: 150px;
   margin: 15px;
-  background-color: red;
+  background-color: #fff4e7;
   border-radius: 8px;
 
   @media (max-width: 1023px) {
