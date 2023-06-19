@@ -25,10 +25,10 @@ export function PopularProducts() {
   return (
     <Container id="products">
       <Typography>Produtos Populares</Typography>
-      <PopularProductsContent>
-        {data?.length ? (
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
+      {data?.length ? (
+        <PopularProductsContent>
+          {/* // eslint-disable-next-line @typescript-eslint/ban-ts-comment //
+          @ts-ignore */}
           <Carousel
             breakPoints={breakPoints}
             pagination={false}
@@ -45,10 +45,10 @@ export function PopularProducts() {
               </Item>
             ))}
           </Carousel>
-        ) : (
-          <h1>Sem produtos cadastrados</h1>
-        )}
-      </PopularProductsContent>
+        </PopularProductsContent>
+      ) : (
+        <Typography>Sem produtos cadastrados</Typography>
+      )}
     </Container>
   )
 }
