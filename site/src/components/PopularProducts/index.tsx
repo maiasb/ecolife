@@ -47,7 +47,7 @@ export function PopularProducts() {
           </Carousel>
         </PopularProductsContent>
       ) : (
-        <Typography>Sem produtos cadastrados</Typography>
+        <Typography>Nenhum produto disponível</Typography>
       )}
     </Container>
   )

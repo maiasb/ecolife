@@ -92,7 +92,7 @@ export function Categories() {
             </Paper>
           </CardsCategories>
         </CategoriesContent>
-      )) || <Typography>Nenhuma categoria disponpivel</Typography>}
+      )) || <Typography>Nenhuma categoria disponível</Typography>}
     </Container>
   )
 }
